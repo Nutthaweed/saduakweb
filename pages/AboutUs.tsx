@@ -2,12 +2,13 @@ import React from 'react';
 
 const AboutUs: React.FC = () => {
     return(
-        <section className="flex flex-col min-h-screen  py-20 text-3xl md:text-4xl bg-[#344F71]">
+        <section className="flex flex-col min-h-screen  py-20 text-2xl md:text-3xl bg-[#344F71] text-white">
             <div className="container mx-auto px-11"> 
-                <p className="leading-tight max-w-5xl mx-auto text-4xl tracking-tight">
-                    We're come from <strong>Information of Technology and Digital Innovation(IBIT)</strong>
-                    We’re building more than a delivery app — we’re creating a trusted food ecosystem for students, employees, and local vendors. Born from real problems on campus, our mission is simple: make food access easier, safer, and fairer for everyone. This is for the people — not profit alone.
-                    That's why we made <strong>Saduak</strong>.
+                <p className="leading-tight max-w-5xl mx-auto text-3xl tracking-tight">
+                    We're come from <strong>Information of Technology and Digital Innovation(IBIT)</strong> of King Mongkut's University of Technology North Bangkok
+                    We findout main problem of delivery app in thailand which is very expensive, That's the reason We made the team with different member to made our delivery application for University
+                    <br></br>
+                    <strong>Let We introduce our team members</strong>
                 </p>
             </div>
             <div className="">
