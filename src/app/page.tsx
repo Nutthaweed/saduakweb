@@ -11,7 +11,7 @@ const Home: React.FC = () => {
         {/* Wave divider */}
         <div className="relative">
           <svg
-            className="absolute bottom-0 w-full block -mb-1"
+            className="absolute bottom-0 w-full block -mb-1 "
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1440 320"
           >

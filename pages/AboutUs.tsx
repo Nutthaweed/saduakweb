@@ -11,8 +11,12 @@ const AboutUs: React.FC = () => {
                     <strong>Let We introduce our team members</strong>
                 </p>
             </div>
-            <div className="">
-
+            <div className="container mx-auto px-11 text-center mt-28">
+                <h2>Our Team</h2>
+                <div>&ldquo;Saduak&rdquo; Team</div>
+                <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 lg:gap-20">
+                    <div>Member</div>
+                </div>
             </div>
         </section>
     )
