@@ -5,7 +5,7 @@ import AboutUs from "../../pages/AboutUs";
 const Home: React.FC = () => {
   return (
     <div>
-      <section className="bg-[#0D1117] text-white">
+      <section className="bg-white text-white">
         <Introduction />
 
         {/* Wave divider */}
