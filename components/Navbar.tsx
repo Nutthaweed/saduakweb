@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
                     : 'bg-transparent'
             }`}
             style={{
-                transform: `translateY(${Math.min(scrollY * 0.1, 20)}px)`,
+                transform: `translateY(${Math.min(scrollY * 0.1, 0)}px)`,
                 opacity: isScrolled ? 1 : 0.95
             }}
         >
@@ -54,10 +54,14 @@ const Navbar: React.FC = () => {
                     {/* Logo */}
                     <div className="flex-shrink-0">
                         <button 
-                            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                            className="transition-all duration-300 transform hover:scale-105"
                             onClick={() => scrollToSection('#top')}
                         >
-                            SADUAK
+                            <img 
+                                src="/saduak_bluetext_bg_whiteLOGO-removebg-preview.png" 
+                                alt="Saduak Logo" 
+                                className="h-25 mt-2"
+                            />
                         </button>
                     </div>
 
