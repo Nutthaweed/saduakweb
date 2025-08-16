@@ -1,5 +1,5 @@
 import React from 'react';
-import Introduction from '../../components/pages/Introduction';
+import Introduction from '../../pages/Introduction';
 
 
 const Home: React.FC = () => {
