@@ -1,6 +1,7 @@
 import React from "react";
 import Introduction from "../../pages/Introduction";
 import AboutUs from "../../pages/AboutUs";
+import AppIntroduce from "../../pages/AppIntroduce";
 
 const Home: React.FC = () => {
   return (
@@ -26,6 +27,10 @@ const Home: React.FC = () => {
       <section className="">
         <AboutUs />
       </section>
+
+
+      
+      <AppIntroduce />
     </div>
   );
 };

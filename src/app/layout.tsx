@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "../../components/Navbar";
+import ScrollObserver from "../../utils/scroll-observer";
 
 export const metadata: Metadata = {
   title: "Saduak Web",
@@ -15,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <ScrollObserver>
         <Navbar />
         {children}
+        </ScrollObserver>
       </body>
     </html>
   );
