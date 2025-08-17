@@ -119,6 +119,7 @@ const AboutUs: React.FC = () => {
           </Carousel>
         </div>
       </div>
+      
     </section>
   );
 };
