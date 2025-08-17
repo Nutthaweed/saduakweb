@@ -18,13 +18,9 @@ const Navbar: React.FC = () => {
     }, []);
 
     const navItems = [
-        { name: 'Problem', href: '#' },
-        { name: 'Solution', href: '#' },
-        { name: 'UVP', href: '#' },
-        { name: 'SDG', href: '#' },
-        { name: 'Business Model', href: '#' },
-        { name: 'Technology', href: '#' },
-        { name: 'Team', href: '#' }
+        { name: 'Introduction', href: '#introduction' },
+        { name: 'Team', href: '#Team' },
+
     ];
 
     const scrollToSection = (href: string) => {

@@ -34,7 +34,7 @@ const Introduction: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
             {/* Left Content */}
-            <div className="space-y-6 sm:space-y-6 lg:space-y-8 z-20 relative px-4 sm:px-0 text-center lg:text-left">
+            <div className="space-y-6 sm:space-y-6 lg:space-y-8 z-20 relative px-4 sm:px-0 text-center lg:text-left" id="introduction">
               <h1 className="text-8xl sm:text-4xl lg:text-9xl font-bold text-gray-900 leading-tight mt-10 scroll-animate">
                 SADUAK
               </h1>

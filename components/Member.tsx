@@ -3,24 +3,33 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 interface MemberProps {
-    id: string,
-    name: string,
-    instagramid: string,
-    link: string,
+  id: string,
+  name: string,
+  instagramid: string,
+  link: string,
 }
 
 const Members: React.FC<MemberProps> = ({ id, name, instagramid, link }) => {
-    return (
-        <div>
-            <Image src={`/images/member_${id}.png`} alt={name} width={800} height={800} className='flex justify-center items-center' />
-            <div className='text-2xxl xl:text-3xl'>{name}</div>
-            <div className='text-xl'>
-                <Link href={link} target="_blank" rel="noopener noreferrer">
-                    {instagramid}
-                </Link>
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="flex flex-col items-center text-center">
+      <div className="w-full max-w-[250px] aspect-square relative">
+        <Image
+          src={`/images/member_${id}.png`}
+          alt={name}
+          fill
+          className="rounded-full object-cover"
+        />
+      </div>
 
-export default Members
+      <div className="mt-4 text-lg md:text-xl font-semibold">{name}</div>
+
+      <div className="text-sm md:text-base">
+        <Link href={link} target="_blank" rel="noopener noreferrer">
+          {instagramid}
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default Members;
