@@ -26,7 +26,7 @@ const Introduction: React.FC = () => {
 
   return (
     <div className="relative min-h-screen bg-white">
-      <Navbar />
+      
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-6 overflow-hidden">

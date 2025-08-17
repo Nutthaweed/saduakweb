@@ -2,6 +2,7 @@ import React from "react";
 import Introduction from "../../pages/Introduction";
 import AboutUs from "../../pages/AboutUs";
 import AppIntroduce from "../../pages/AppIntroduce";
+import AppScreen from "../../pages/AppScreen";
 
 const Home: React.FC = () => {
   return (
@@ -31,6 +32,7 @@ const Home: React.FC = () => {
 
       
       <AppIntroduce />
+      <AppScreen />
     </div>
   );
 };

@@ -30,7 +30,7 @@ const AppIntroduce: React.FC = () => {
     }
 
     return(
-        <div ref={refContainer} className=" bg-white text-black">
+        <div ref={refContainer} className=" bg-white text-[#344F71]">
                 <div className="min-h-screen max-w-5xl mx-auto px-10 lg:px-20 py-24 md:py-28 lg:py-36 flex flex-col justify-center items-center text-center text-2xl md:text-4xl tracking-tight font-semibold">
                         <div className='leading-[1.15]'>
                             <div className={s.appintroductionText} style={{ opacity: Opacityblock(progress, 0)}}><strong>Saduak</strong> is made with <strong>Flutter</strong> for Frontend.</div>
