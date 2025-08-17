@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
                             onClick={() => scrollToSection('#top')}
                         >
                             <img 
-                                src="/saduak_bluetext_bg_whiteLOGO-removebg-preview.png" 
+                                src="/images/saduak_bluetext_bg_whiteLOGO-removebg-preview.png" 
                                 alt="Saduak Logo" 
                                 className="h-25 mt-2"
                             />

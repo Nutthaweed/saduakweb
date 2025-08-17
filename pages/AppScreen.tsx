@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import Image from "next/image";
 import { TileWrapper, TileBackground, TileContent, Tile } from "../components/Tile";
@@ -9,129 +11,113 @@ import {
   WorkLink,
 } from "../components/EachScreen";
 
-// Import your images
-import Watchamove from "../Images/work-3.png";
-import Design from "../Images/work-4.png";
-import Phoneapp from "../Images/work-5.png";
-import Ktpop from "../Images/work-6.png";
-import Website from "../Images/work-1.png";
-import Blitzong from "../Images/work-2.png";
+// Image assets
+const IMAGES = {
+  phone: "/images/Phone_Saduak-removebg-preview.png",
+  customer: "/images/customer_page-removebg-preview.png",
+  app1: "/images/image_1-removebg-preview.png",
+} as const;
 
-const AppScreen: React.FC= () => (
-  <TileWrapper numOfpages={6}>
-    <TileBackground>
-      <WorkBackground />
-    </TileBackground>
-    <TileContent>
-      <Tile page={0}>
-        {({ progress }) => (
-          <WorkContainer>
-            <WorkLeft progress={progress}>
-              <div>We built</div>
-              <div className="text-4xl md:text-5xl font-semibold tracking-tight">
-                Website more prettier
-              </div>
-            </WorkLeft>
-            <WorkRight progress={progress}>
-              <Image src={Website} alt="Website" width={840} height={1620} />
-            </WorkRight>
-          </WorkContainer>
-        )}
-      </Tile>
+// Content data for each tile
+const TILE_CONTENT = [
+  {
+    page: 0,
+    title: "Smart Communication",
+    subtitle: "Integrated chat system ensures no missed messages between buyers and sellers.",
+    image: IMAGES.phone,
+    alt: "Smart Communication Interface",
+    link: undefined,
+    subtitle2: undefined
+  },
+  {
+    page: 1,
+    title: "Reliable Orders & Delivery",
+    subtitle: "Real-time order tracking with accurate preparation and delivery estimates.",
+    link: undefined,
+    image: IMAGES.customer,
+    alt: "Reliable Orders & Delivery",
+    subtitle2: undefined
+  },
+  {
+    page: 2,
+    title: "Trusted & Verified Sellers",
+    subtitle: "Every store is identity-checked to eliminate scams and build buyer confidence.",
+    image: IMAGES.app1,
+    alt: "Trusted & Verified Sellers",
+    link: undefined,
+    subtitle2: undefined
+  },
+  {
+    page: 3,
+    title: "Quality & Accountability",
+    subtitle: "Review and rating system rewards top performers and flags poor service.",
+    subtitle2: "(73% of buyers want this feature)",
+    image: IMAGES.phone,
+    alt: "Quality & Accountability",
+    link: undefined
+  }
+] as const;
 
-      <Tile page={1}>
-        {({ progress }) => (
-          <WorkContainer>
-            <WorkLeft progress={progress}>
-              <div>We made</div>
-              <div className="text-4xl md:text-5xl font-semibold tracking-tight">
-                <WorkLink href="https://blitzong-nutthaweed.vercel.app/">
-                  Blitzong
-                </WorkLink>{" "}
-                for song
-              </div>
-            </WorkLeft>
-            <WorkRight progress={progress}>
-              <Image src={Blitzong} alt="Website" width={840} height={1620} />
-            </WorkRight>
-          </WorkContainer>
-        )}
-      </Tile>
-
-      <Tile page={2}>
-        {({ progress }) => (
-          <WorkContainer>
-            <WorkLeft progress={progress}>
-              <div>We created</div>
-              <div className="text-4xl md:text-5xl font-semibold tracking-tight">
-                <WorkLink href="https://watchamove-lpdps3wr6-nutthaweed.vercel.app/">
-                  Watchamove
-                </WorkLink>{" "}
-                for movie
-              </div>
-            </WorkLeft>
-            <WorkRight progress={progress}>
-              <Image src={Watchamove} alt="Watchamove" width={840} height={1620} />
-            </WorkRight>
-          </WorkContainer>
-        )}
-      </Tile>
-
-      <Tile page={3}>
-        {({ progress }) => (
-          <WorkContainer>
-            <WorkLeft progress={progress}>
-              <div>We designed</div>
-              <div className="text-4xl md:text-5xl font-semibold tracking-tight">
-                <WorkLink href="https://krungtepian-nutthaweed.vercel.app/">
-                  Website
-                </WorkLink>{" "}
-                modern
-              </div>
-            </WorkLeft>
-            <WorkRight progress={progress}>
-              <Image src={Design} alt="Design" width={840} height={1620} />
-            </WorkRight>
-          </WorkContainer>
-        )}
-      </Tile>
-
-      <Tile page={4}>
-        {({ progress }) => (
-          <WorkContainer>
-            <WorkLeft progress={progress}>
-              <div>We made</div>
-              <div className="text-4xl md:text-5xl font-semibold tracking-tight">
-                Application too
-              </div>
-            </WorkLeft>
-            <WorkRight progress={progress}>
-              <Image src={Phoneapp} alt="Phone app" width={840} height={1620} />
-            </WorkRight>
-          </WorkContainer>
-        )}
-      </Tile>
-
-      <Tile page={5}>
-        {({ progress }) => (
-          <WorkContainer>
-            <WorkLeft progress={progress}>
-              <div>We also made</div>
-              <div className="text-4xl md:text-5xl font-semibold tracking-tight">
-                <WorkLink href="https://www.youtube.com/channel/UCCva9l5GAPlTBpPhLTPcifA">
-                  KTPOP
-                </WorkLink>{" "}
-                too
-              </div>
-            </WorkLeft>
-            <WorkRight progress={progress}>
-              <Image src={Ktpop} alt="KTPOP" width={840} height={1620} />
-            </WorkRight>
-          </WorkContainer>
-        )}
-      </Tile>
-    </TileContent>
-  </TileWrapper>
+// Reusable Tile Component
+const WorkTile: React.FC<{
+  page: number;
+  title: string;
+  subtitle: string;
+  subtitle2?: string;
+  image: string;
+  alt: string;
+  link?: string;
+}> = ({ page, title, subtitle, subtitle2, image, alt, link }) => (
+  <Tile page={page}>
+    {({ progress }) => (
+      <WorkContainer>
+        <WorkLeft progress={progress}>
+          <div className="text-4xl md:text-5xl font-semibold tracking-tight">
+            {link ? (
+              <WorkLink href={link}>{title}</WorkLink>
+            ) : (
+              title
+            )}
+          </div>
+          <div className="text-lg md:text-xl mt-4">
+            {subtitle}
+          </div>
+          {subtitle2 && (
+            <div className="text-sm md:text-base mt-2 text-gray-400 italic">
+              {subtitle2}
+            </div>
+          )}
+        </WorkLeft>
+        <WorkRight progress={progress}>
+          <Image src={image} alt={alt} width={840} height={1620} />
+        </WorkRight>
+      </WorkContainer>
+    )}
+  </Tile>
 );
+
+const AppScreen: React.FC = () => {
+  return (
+    <TileWrapper numOfpages={TILE_CONTENT.length}>
+      <TileBackground>
+        <WorkBackground />
+      </TileBackground>
+      <TileContent>
+        {TILE_CONTENT.map((content) => (
+          <WorkTile
+            key={content.page}
+            page={content.page}
+            title={content.title}
+            subtitle={content.subtitle}
+            subtitle2={content.subtitle2}
+            image={content.image}
+            alt={content.alt}
+            link={content.link}
+          />
+        ))}
+      </TileContent>
+    </TileWrapper>
+  );
+};
 
 export default AppScreen;

@@ -61,7 +61,7 @@ const Introduction: React.FC = () => {
                 {/* Background Phone */}
                 <div className="w-[200px] sm:w-[200px] md:w-[400px] lg:w-[500px] h-[320px] sm:h-[450px] md:h-[600px] lg:h-[750px] rounded-2xl overflow-hidden relative z-10 ">
                   <img
-                    src="/customer_page-removebg-preview.png"
+                    src="/images/customer_page-removebg-preview.png"
                     alt="Food Delivery App Interface"
                     className="w-full h-full object-cover rounded-3xl"
                   />
@@ -72,7 +72,7 @@ const Introduction: React.FC = () => {
                   w-[150px] sm:w-[250px] md:w-[350px] lg:w-[500px] 
                   h-[240px] sm:h-[400px] md:h-[550px] lg:h-[750px] z-20">
                   <img
-                    src="/Phone_Saduak-removebg-preview.png"
+                    src="/images/Phone_Saduak-removebg-preview.png"
                     alt="Saduak Logo Screen"
                     className="w-full h-full object-cover rounded-3xl"
                   />
