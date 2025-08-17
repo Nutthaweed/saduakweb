@@ -1,10 +1,30 @@
-import React from 'react';
+"use client";
+
+import React, { useEffect } from 'react';
 import Members from '../components/Member';
 
 const AboutUs: React.FC = () => {
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        const elements = document.querySelectorAll('.scroll-animate');
+        elements.forEach((el) => observer.observe(el));
+
+        return () => observer.disconnect();
+    }, []);
+
     return(
         <section className="flex flex-col min-h-screen  py-20 text-2xl md:text-3xl bg-[#344F71] text-white">
-            <div className="container mx-auto px-11"> 
+            <div className="container mx-auto px-11 scroll-animate"> 
                 <p className="leading-tight max-w-5xl mx-auto text-3xl tracking-tight">
                     We're come from <strong>Information of Technology and Digital Innovation(IBIT)</strong> of King Mongkut's University of Technology North Bangkok
                     We findout main problem of delivery app in thailand which is very expensive, That's the reason We made the team with different member to made our delivery application for University
@@ -12,7 +32,7 @@ const AboutUs: React.FC = () => {
                     <strong>Let We introduce our team members</strong>
                 </p>
             </div>
-            <div className="container mx-auto px-11 text-center mt-28">
+            <div className="container mx-auto px-11 text-center mt-28 scroll-animate">
                 <h2>Our Team</h2>
                 <div>&ldquo;Saduak&rdquo; Team</div>
                 <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 lg:gap-20">

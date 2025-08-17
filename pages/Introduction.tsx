@@ -1,39 +1,61 @@
-import React from 'react';
+"use client";
+
+import React, { useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 
 const Introduction: React.FC = () => {
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll('.scroll-animate');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-white">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative min-h-screen flex items-center justify-center pt-6 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
             {/* Left Content */}
-            <div className="space-y-8 z-20 relative">
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
+            <div className="space-y-6 sm:space-y-6 lg:space-y-8 z-20 relative px-4 sm:px-0 text-center lg:text-left">
+              <h1 className="text-8xl sm:text-4xl lg:text-9xl font-bold text-gray-900 leading-tight mt-10 scroll-animate">
                 SADUAK
               </h1>
-              <div className="space-y-2">
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-600">
+              <div className="space-y-2 mt-10 scroll-animate">
+                <h2 className="text-4xl sm:text-4xl lg:text-5xl font-bold text-[#396cac] ">
                   Local Tasty
                 </h2>
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-600">
+                <h2 className="text-4xl sm:text-4xl lg:text-5xl font-bold text-[#396cac] ">
                   Fast Delivery
                 </h2>
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-600">
+                <h2 className="text-4xl sm:text-4xl lg:text-5xl font-bold text-[#396cac] ">
                   Guaranteed Reliable
                 </h2>
               </div>
-              <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-2xl">
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-bold scroll-animate">
                 We're building more than a delivery app — we're creating a trusted food ecosystem for students, employees, and local vendors. Born from real problems on campus, our mission is simple: make food access easier, safer, and fairer for everyone. This is for the people — not profit alone.
               </p>
             </div>
 
             {/* Right Content - Phones */}
-            <div className="relative flex justify-center lg:justify-end">
+            <div className="relative flex justify-center lg:justify-end lg:pr-4 ">
               <div className="relative">
 
                 {/* Background Phone */}
