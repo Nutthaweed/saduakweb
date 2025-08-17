@@ -37,16 +37,16 @@ const Introduction: React.FC = () => {
               <div className="relative">
 
                 {/* Background Phone */}
-                <div className="w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px] h-[320px] sm:h-[450px] md:h-[600px] lg:h-[750px] rounded-2xl overflow-hidden relative z-10">
+                <div className="w-[200px] sm:w-[200px] md:w-[400px] lg:w-[500px] h-[320px] sm:h-[450px] md:h-[600px] lg:h-[750px] rounded-2xl overflow-hidden relative z-10 ">
                   <img
                     src="/customer_page-removebg-preview.png"
                     alt="Food Delivery App Interface"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-3xl"
                   />
                 </div>
 
                 {/* Foreground Phone */}
-                <div className="absolute top-5 sm:top-10 md:top-10 lg:top-10 left-10 sm:left-16 md:left-20 lg:-left-25 
+                <div className="absolute top-20 sm:top-10 md:top-12 lg:top-8 left-10 sm:left-16 md:left-20 lg:-left-25 
                   w-[150px] sm:w-[250px] md:w-[350px] lg:w-[500px] 
                   h-[240px] sm:h-[400px] md:h-[550px] lg:h-[750px] z-20">
                   <img
@@ -62,19 +62,6 @@ const Introduction: React.FC = () => {
         </div>
       </section>
 
-      {/* Wave Divider */}
-      <div className="absolute bottom-0 w-full overflow-hidden pointer-events-none z-30">
-        <svg
-          className="w-full block"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 320"
-        >
-          <path
-            fill="#344F71"
-            d="M0,160L48,186.7C96,213,192,267,288,272C384,277,480,235,576,208C672,181,768,171,864,192C960,213,1056,267,1152,250.7C1248,235,1344,149,1392,106.7L1440,64L1440,320L0,320Z"
-          ></path>
-        </svg>
-      </div>
     </div>
   );
 };
