@@ -1,4 +1,5 @@
 import React from 'react';
+import Members from '../components/Member';
 
 const AboutUs: React.FC = () => {
     return(
@@ -15,7 +16,16 @@ const AboutUs: React.FC = () => {
                 <h2>Our Team</h2>
                 <div>&ldquo;Saduak&rdquo; Team</div>
                 <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 lg:gap-20">
-                    <div>Member</div>
+                    <Members id="toto" name="Nutthawit Morkkaew" instagramid='@nuttha.wit' link="https://www.instagram.com/nuttha.wit"/>
+                    <Members id="toto" name="Nutthawit Morkkaew" instagramid='@nuttha.wit' link="https://www.instagram.com/nuttha.wit"/>
+                    <Members id="toto" name="Nutthawit Morkkaew" instagramid='@nuttha.wit' link="https://www.instagram.com/nuttha.wit"/>
+                    <Members id="toto" name="Nutthawit Morkkaew" instagramid='@nuttha.wit' link="https://www.instagram.com/nuttha.wit"/>
+                    <Members id="toto" name="Nutthawit Morkkaew" instagramid='@nuttha.wit' link="https://www.instagram.com/nuttha.wit"/>
+                    <Members id="toto" name="Nutthawit Morkkaew" instagramid='@nuttha.wit' link="https://www.instagram.com/nuttha.wit"/>
+                    <Members id="toto" name="Nutthawit Morkkaew" instagramid='@nuttha.wit' link="https://www.instagram.com/nuttha.wit"/>
+                    <Members id="toto" name="Nutthawit Morkkaew" instagramid='@nuttha.wit' link="https://www.instagram.com/nuttha.wit"/>
+                    <Members id="toto" name="Nutthawit Morkkaew" instagramid='@nuttha.wit' link="https://www.instagram.com/nuttha.wit"/>
+                    <Members id="toto" name="Nutthawit Morkkaew" instagramid='@nuttha.wit' link="https://www.instagram.com/nuttha.wit"/>
                 </div>
             </div>
         </section>
