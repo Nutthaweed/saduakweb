@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 
 const Navbar: React.FC = () => {
@@ -49,6 +50,7 @@ const Navbar: React.FC = () => {
                 <div className="flex justify-between items-center h-16 lg:h-20">
                     {/* Logo */}
                     <div className="flex-shrink-0">
+                        <Link href="/">
                         <button 
                             className="transition-all duration-300 transform hover:scale-105"
                             onClick={() => scrollToSection('#top')}
@@ -59,6 +61,7 @@ const Navbar: React.FC = () => {
                                 className="h-25 mt-2"
                             />
                         </button>
+                        </Link>
                     </div>
 
                     {/* Navigation Links */}

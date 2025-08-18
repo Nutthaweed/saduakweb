@@ -4,6 +4,7 @@ import AboutUs from "../../pages/AboutUs";
 import AppIntroduce from "../../pages/AppIntroduce";
 import AppScreen from "../../pages/AppScreen";
 import ScrollObserver from "../../utils/scroll-observer";
+import Scan from "../../pages/Scan";
 
 const Home: React.FC = () => {
   return (
@@ -27,7 +28,7 @@ const Home: React.FC = () => {
           </div>
         </section>
 
-        <section className="">
+        <section>
           <AboutUs />
         </section>
 
@@ -35,6 +36,7 @@ const Home: React.FC = () => {
         
         <AppIntroduce />
         <AppScreen />
+        <Scan />
       </div>
     </ScrollObserver>
   );
