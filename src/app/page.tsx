@@ -4,7 +4,7 @@ import AboutUs from "../../pages/AboutUs";
 import AppIntroduce from "../../pages/AppIntroduce";
 import AppScreen from "../../pages/AppScreen";
 import Scan from "../../pages/Scan";
-import Footnote from "../../pages/Footnote";
+
 
 const Home: React.FC = () => {
   return (
@@ -37,7 +37,6 @@ const Home: React.FC = () => {
         <AppIntroduce />
         <AppScreen />
         <Scan />
-        <Footnote />
       </div>
   );
 };
