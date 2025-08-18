@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
     const navItems = [
         { name: 'Introduction', href: '#introduction' },
         { name: 'Team', href: '#Team' },
-
+        { name: 'Information', href: '#information' },
     ];
 
     const scrollToSection = (href: string) => {

@@ -3,12 +3,12 @@ import Introduction from "../../pages/Introduction";
 import AboutUs from "../../pages/AboutUs";
 import AppIntroduce from "../../pages/AppIntroduce";
 import AppScreen from "../../pages/AppScreen";
-import ScrollObserver from "../../utils/scroll-observer";
 import Scan from "../../pages/Scan";
+import Footnote from "../../pages/Footnote";
 
 const Home: React.FC = () => {
   return (
-    <ScrollObserver>
+   
       <div>
         <section className="bg-white text-white">
           <Introduction />
@@ -37,8 +37,8 @@ const Home: React.FC = () => {
         <AppIntroduce />
         <AppScreen />
         <Scan />
+        <Footnote />
       </div>
-    </ScrollObserver>
   );
 };
 
