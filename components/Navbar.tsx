@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 const Navbar: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [scrollY, setScrollY] = useState(0);
+    const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -17,6 +18,12 @@ const Navbar: React.FC = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    // Close mobile menu when clicking on a link
+    const handleNavClick = (href: string) => {
+        scrollToSection(href);
+        setIsOpen(false);
+    };
 
     const navItems = [
         { name: 'Introduction', href: '#introduction' },
@@ -64,7 +71,7 @@ const Navbar: React.FC = () => {
                         </Link>
                     </div>
 
-                    {/* Navigation Links */}
+                    {/* Navigation Links - Desktop */}
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-8">
                             {navItems.map((item) => (
@@ -86,12 +93,47 @@ const Navbar: React.FC = () => {
 
                     {/* Mobile menu button */}
                     <div className="md:hidden">
-                        <button className="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600 transition-colors duration-200">
+                        <button 
+                            className="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600 transition-colors duration-200" 
+                            onClick={() => setIsOpen(!isOpen)}
+                            aria-label="Toggle mobile menu"
+                        >
                             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                                {isOpen ? (
+                                    // X icon for close
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                ) : (
+                                    // Hamburger icon for open
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                                )}
                             </svg>
                         </button>
                     </div>
+                </div>
+            </div>
+
+            {/* Mobile menu */}
+            <div className={`md:hidden transition-all duration-300 ease-in-out ${
+                isOpen 
+                    ? 'max-h-96 opacity-100 visible' 
+                    : 'max-h-0 opacity-0 invisible'
+            }`}>
+                <div className={`px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-md border-t border-gray-200/50 ${
+                    isScrolled ? 'shadow-lg' : ''
+                }`}>
+                    {navItems.map((item) => (
+                        <button
+                            key={item.name}
+                            onClick={() => handleNavClick(item.href)}
+                            className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-all duration-200 ${
+                                isScrolled 
+                                    ? 'text-gray-800 hover:text-blue-600 hover:bg-blue-50' 
+                                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                            }`}
+                        >
+                            {item.name}
+                        </button>
+                    ))}
                 </div>
             </div>
 
