@@ -85,7 +85,7 @@ const AboutUs: React.FC = () => {
     <section className="flex flex-col min-h-screen py-20 text-2xl md:text-3xl bg-[#344F71] text-white" id="Team">
       <div className="container mx-auto px-11 scroll-animate">
         <p className="leading-tight max-w-5xl mx-auto text-3xl tracking-tight">
-          We're come from <strong>Information of Technology and Digital Innovation (IBIT)</strong> of King Mongkut's University of Technology North Bangkok.
+          We&apos;re come from <strong>Information of Technology and Digital Innovation (IBIT)</strong> of King Mongkut&apos;s University of Technology North Bangkok.
           of Thailand, With our member that have different skills and performance,We have guaranteed with our passion, our hardwork to our project.
           <br />
           <strong>Let us introduce our team members</strong>
